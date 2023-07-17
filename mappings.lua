@@ -35,8 +35,14 @@ return {
     },
     ["<Leader>bc"] = { function() require("astronvim.utils.buffer").close() end,         desc = "Close buffer" },
     ["<Leader>bC"] = { function() require("astronvim.utils.buffer").close_all(true) end, desc = "Close all buffers except current" },
-    ["<Leader>bh"] = { function() require("astronvim.utils.buffer").prev() end,          desc = "Previous buffer" },
-    ["<Leader>bl"] = { function() require("astronvim.utils.buffer").next() end,          desc = "Next buffer" },
+    ["<Leader>bh"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Previous buffer",
+    },
+    ["<Leader>bl"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Next buffer",
+    },
 
     -- Window (using smart-splits)
     ["<Leader>w"]        = { desc = get_icon("Window", 1, true) .. "Window" }, -- Section
