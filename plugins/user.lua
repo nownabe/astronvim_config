@@ -15,4 +15,13 @@ return {
       vim.g.table_mode_header = "-"
     end,
   },
+  {
+    "mattn/vim-goimports",
+    ft = {"go"},
+    config = function()
+      vim.g.goimports = 1
+      vim.g.goimports_simplify = 1
+      vim.g.goimports_simplify_cmd = "gofumpt"
+    end,
+  },
 }
