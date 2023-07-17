@@ -13,7 +13,6 @@ return {
     config = function()
       vim.g.table_mode_corner = "|"
       vim.g.table_mode_header = "-"
-      vim.api.nvim_command("TableModeEnable")
     end,
   }
 }
