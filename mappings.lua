@@ -14,9 +14,9 @@ return {
     ["<leader>lS"] = false,
 
     -- Cursor
-    ["<Leader>h"] = "^",
-    ["<Leader>l"] = "$",
-    ["<Leader>m"] = "%",
+    ["<Leader>h"] = { "^", desc = "Move to first non-whitespace" },
+    ["<Leader>l"] = { "$", desc = "Move to end of line" },
+    ["<Leader>m"] = { "%", desc = "Match nearest [], (), {}" },
 
     -- Window (using smart-splits)
     ["<Leader>w"]        = { desc = get_icon("Window", 1, true) .. "Window" }, -- Section
