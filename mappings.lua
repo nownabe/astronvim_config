@@ -10,6 +10,12 @@ return {
     ["<leader>q"] = false,
     ["<leader>h"] = false,
     ["<leader>l"] = false,
+    ["<leader>c"] = false,
+    ["<leader>C"] = false,
+    ["<leader>bc"] = false,
+    ["<leader>bC"] = false,
+    ["<leader>bd"] = false,
+    ["<leader>bl"] = false,
     ["<leader>ls"] = false,
     ["<leader>lS"] = false,
 
@@ -17,6 +23,20 @@ return {
     ["<Leader>h"] = { "^", desc = "Move to first non-whitespace" },
     ["<Leader>l"] = { "$", desc = "Move to end of line" },
     ["<Leader>m"] = { "%", desc = "Match nearest [], (), {}" },
+
+    -- Buffer
+    ["<Leader>bB"] = {
+      function()
+        require("astronvim.utils.status.heirline").buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
+      end,
+      desc = "Close buffer",
+    },
+    ["<Leader>bc"] = { function() require("astronvim.utils.buffer").close() end,         desc = "Close buffer" },
+    ["<Leader>bC"] = { function() require("astronvim.utils.buffer").close_all(true) end, desc = "Close all buffers except current" },
+    ["<Leader>bh"] = { function() require("astronvim.utils.buffer").prev() end,          desc = "Previous buffer" },
+    ["<Leader>bl"] = { function() require("astronvim.utils.buffer").next() end,          desc = "Next buffer" },
 
     -- Window (using smart-splits)
     ["<Leader>w"]        = { desc = get_icon("Window", 1, true) .. "Window" }, -- Section
@@ -53,8 +73,8 @@ return {
     ["<Leader>;L"] = { function() vim.lsp.codelens.run() end,                               desc = "LSP CodeLens run" },
     ["<Leader>;n"] = { function() vim.diagnostic.open_float() end,                          desc = "Hover diagnostics" },
     ["<Leader>;N"] = { function() require("telescope.builtin").diagnostics() end,           desc = "Search diagnostics" },
-    ["<Leader>;r"] = { function() vim.lsp.buf.rename() end,                                 desc = "Rename current symbol" },
-    ["<Leader>;R"] = { function() require("telescope.builtin").lsp_references() end,        desc = "Search references" },
+    ["<Leader>;r"] = { function() require("telescope.builtin").lsp_references() end,        desc = "Search references" },
+    ["<Leader>;R"] = { function() vim.lsp.buf.rename() end,                                 desc = "Rename current symbol" },
     ["<Leader>;s"] = { function() require("telescope.builtin").lsp_document_symbols() end,  desc = "Search symbols in current buffer" },
     ["<Leader>;S"] = {
       function()
