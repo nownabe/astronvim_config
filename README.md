@@ -27,12 +27,28 @@ Then opening your browser will fail. Visit https://github.com/login/device and e
 
 | Key         | Action                       | Command |
 |-------------|------------------------------|---------|
-| `<Leader>h` | Move to first non-whitespace | `^`     |
-| `<Leader>l` | Move to end of line          | `$`     |
-| `<Leader>m` | Match nearest [], (), {}     | `%`     |
 | `<Leader>/` | Comment                      |         |
 | `\`         | Split horizontally           |         |
 | `\|`        | Split vertically             |         |
+
+#### Cursor
+
+| Key         | Action                       | Command |
+|-------------|------------------------------|---------|
+| `<Leader>h` | Move to first non-whitespace | `^`     |
+| `<Leader>l` | Move to end of line          | `$`     |
+| `<Leader>m` | Match nearest [], (), {}     | `%`     |
+| `H`         | go to first line on screen   |         |
+| `M`         | go to middle line on screen  |         |
+| `L`         | go to last line on screen    |         |
+
+#### Scroll
+
+| Key         | Action                       | Command |
+|-------------|------------------------------|---------|
+| `zt`        | Scroll to the top            |         |
+| `zz`        | Scroll to the middle         |         |
+| `zb`        | Scroll to the bottom         |         |
 
 #### Buffer
 
