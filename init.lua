@@ -20,5 +20,5 @@ return {
         ["<leader>lf"] = false,
       },
     }
-  }
+  },
 }
